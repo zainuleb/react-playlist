@@ -1,19 +1,26 @@
 import "./ExpenseItem.css";
 
-function ExpenseItem()
+function ExpenseItem(props)
 {
-    const expDate = "2021, 6, 25"
-    const expTitle = 'Car Insurance'
-    const expeAmount = 299
+    console.log(props.date)
+    // const d = new Date('2010-08-05')
+    const month = props.date.toLocaleString('en-US', { month: 'long' });
+    const day = props.date.toLocaleString('en-US', { day: '2-digit' });
+    const year = props.date.getFullYear();
+
     return (
         <>
             <div className="expense-item">
-                {expDate}
+                <div>
+                    <div>{month}</div>
+                    <div>{day}</div>
+                    <div>{year}</div>
+                </div>
             </div>
             <div className='expense-item__description'>
-                <h2>{expTitle}</h2>
+                <h2>{props.title}</h2>
                 <div>
-                    <h2 className='expense-item__price'>{expeAmount}</h2>
+                    <h2 className='expense-item__price'>{props.amount}</h2>
                 </div>
             </div>
 
