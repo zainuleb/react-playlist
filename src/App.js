@@ -12,7 +12,7 @@ function App() {
         {
           name: username,
           age: userAge,
-          id: Math.random().toString().toFixed(2),
+          id: Math.random().toString(),
         },
       ];
     });

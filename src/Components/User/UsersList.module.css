@@ -2,6 +2,8 @@
   background-color: white;
   font-size: 20px;
   padding: 20px 30px;
+  margin: 0 auto;
+  width: 50%;
 }
 
 .table thead {
@@ -12,5 +14,5 @@
 .table th,
 .table td {
   margin: 10px 20px;
-  padding: 10px 20px;
+  padding: 10px 30px;
 }

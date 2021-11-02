@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './UsersList.module.css';
 
 const UsersList = ({ users }) => {
-  console.log(users);
   return (
     <table className={styles.table}>
       <thead>
