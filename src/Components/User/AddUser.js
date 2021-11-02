@@ -3,10 +3,10 @@ import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
 import styles from './AddUser.module.css';
 
-const AddUser = () => {
+const AddUser = ({ addUsersHandler }) => {
   const [formData, setFormData] = useState({
     username: '',
-    age: 0,
+    age: '',
   });
 
   const userFormChangeHandler = (e) => {
@@ -15,6 +15,19 @@ const AddUser = () => {
 
   const addUserHandler = (e) => {
     e.preventDefault();
+
+    if (
+      formData.username.trim().length === 0 ||
+      formData.age.trim().length === 0
+    ) {
+      return;
+    }
+
+    if (formData.age.trim().length < 1) {
+      return;
+    }
+
+    addUsersHandler(formData.username, formData.age);
   };
 
   return (
@@ -23,20 +36,24 @@ const AddUser = () => {
         <label htmlFor="username">Username</label>
         <input
           id="username"
+          name="username"
           type="text"
-          onChange={userFormChangeHandler}
           value={formData.username}
+          onChange={userFormChangeHandler}
         />
 
         <label htmlFor="age">Age (Years)</label>
         <input
           id="age"
+          name="age"
           type="number"
-          onChange={userFormChangeHandler}
           value={formData.age}
+          onChange={userFormChangeHandler}
         />
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit" onClick={addUserHandler}>
+          Submit
+        </Button>
       </form>
     </Card>
   );
