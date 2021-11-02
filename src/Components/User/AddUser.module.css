@@ -1,0 +1,44 @@
+.input {
+  margin: 50px auto;
+  max-width: 50%;
+  padding: 20px 30px;
+}
+
+.input form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input form input,
+.input form label {
+  font-weight: 700;
+  font-size: 15px;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.input form button {
+  margin: 20px auto;
+  font-size: 15px;
+  max-width: 50%;
+  background-color: rgb(24, 22, 22);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 426px) {
+  .input {
+    max-width: 80%;
+  }
+  .input form button {
+    padding: 10px 20px;
+    max-width: 80%;
+  }
+
+  .input form input,
+  .input form label {
+    max-width: 80%;
+  }
+}
